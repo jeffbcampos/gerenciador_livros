@@ -13,3 +13,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model livro {
+  id          Int      @id @default(autoincrement())
+  titulo      String
+  autor       String
+  anoPublicacao Int
+  genero      String  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
